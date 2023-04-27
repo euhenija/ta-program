@@ -1,0 +1,53 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "test-report-portal-dashboards;open-report-portal-page",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Open report portal page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2172600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "Navigate to base url",
+            "match": {
+              "location": "test\\features\\step-definitions\\common-steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5020024499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 529200
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "test-report-portal-dashboards",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Test Report Portal Dashboards",
+    "tags": [],
+    "uri": "test\\features\\dashboards.feature"
+  }
+]
