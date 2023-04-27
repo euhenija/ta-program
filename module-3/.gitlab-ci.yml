@@ -1,0 +1,34 @@
+image: node:16.17.0-alpine
+
+stages:
+  - lint
+  - test-unit
+  - test
+
+before_script:
+  - node --version
+  - npm --version
+  - npm ci
+
+eslint:
+  stage: lint
+  script:
+    - echo "Here we run lint"
+    - npm run lint
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+
+test:unit:
+  stage: test-unit
+  script:
+    - echo "Here we run unit tests"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+
+test:
+  stage: test
+  script:
+    - echo "Here we run tests"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+

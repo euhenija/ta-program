@@ -1,0 +1,34 @@
+{
+  "name": "mentoring-program-advanced",
+  "version": "1.0.0",
+  "description": "Text automation framework for EPAM Report portal",
+  "scripts": {
+    "test": "cucumber-js ./test/features/ ",
+    "format": "prettier --write \"**/*.{js,md}\"",
+    "lint": "eslint --format=node_modules/eslint-formatter-pretty .",
+    "lint:fix": "eslint . --fix",
+    "html:report": "node test/reporter/reporter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/yauheniya_latysh/mentoring-program-advanced.git"
+  },
+  "keywords": [
+    "test",
+    "automation",
+    "framework"
+  ],
+  "author": "Yauheniya Latysh",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.1.0",
+    "cucumber-html-reporter": "^6.0.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-formatter-pretty": "^5.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "webdriverio": "^7.23.0"
+  }
+}
