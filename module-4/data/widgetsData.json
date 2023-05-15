@@ -1,0 +1,29 @@
+[
+    {
+      "name": "We Create Widget",
+      "description":"Short description",
+      "itemQuantity":50
+    },
+    {
+      "name": "Failed test cases from launches",
+      "description":"LAUNCHES STATISTICS",
+      "itemQuantity":40
+    },
+    {
+      "name": "Trend chart for failing tast cases",
+      "description":"All failed tests are in this chart",
+      "itemQuantity":30
+    },
+    {
+      "name": "Failed test case",
+      "description":"Trend for one item",
+      "itemQuantity":1
+    },
+    {
+      "name": "Trend chart for 5 tests",
+      "description":"All failed tests are in this chart",
+      "itemQuantity":5
+    }
+]
+
+

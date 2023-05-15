@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Preproduction environment",
+    "description":"Dashboard for preprod"
+  },
+  {
+    "name": "Test environment",
+    "description":"TEST ENVIRONMENT DASHBOARD"
+  },
+  {
+    "name": "Dev environment",
+    "description":"DEV environment DASHboard"
+  },
+  {
+    "name": "PRODUCTION ENVIRONMENT",
+    "description":"RRR"
+  },
+  {
+    "name": "CuSToM DaSbOaRD",
+    "description":"Custom dashboard"
+  }
+]
+
+
