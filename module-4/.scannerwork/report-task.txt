@@ -1,0 +1,6 @@
+projectKey=yauheniya_latysh_mentoring-program-advanced_AYeRj9ogvd4RI4LPdJoL
+serverUrl=http://localhost:9000
+serverVersion=10.0.0.68432
+dashboardUrl=http://localhost:9000/dashboard?id=yauheniya_latysh_mentoring-program-advanced_AYeRj9ogvd4RI4LPdJoL
+ceTaskId=AYe-BskLQeGu3b4DjHys
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYe-BskLQeGu3b4DjHys

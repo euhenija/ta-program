@@ -1,0 +1,42 @@
+[
+  {
+    "testSuitName": "#1",
+    "quantityOfPassedTests": 1,
+    "quantityOfFailedTests": 9,
+    "quantityOfSkippedTests": 0,
+    "barXCoordinate": -220,
+    "barYCoordinate": 145
+  },
+  {
+    "testSuitName": "#2",
+    "quantityOfPassedTests": 5,
+    "quantityOfFailedTests": 9,
+    "quantityOfSkippedTests": 1,
+    "barXCoordinate": -110,
+    "barYCoordinate": 145
+  },
+  {
+    "testSuitName": "#3",
+    "quantityOfPassedTests": 10,
+    "quantityOfFailedTests": 8,
+    "quantityOfSkippedTests": 2,
+    "barXCoordinate": 0,
+    "barYCoordinate": 145
+  },
+  {
+    "testSuitName": "#4",
+    "quantityOfPassedTests": 20,
+    "quantityOfFailedTests": 5,
+    "quantityOfSkippedTests": 0,
+    "barXCoordinate": 110,
+    "barYCoordinate": 145
+  },
+  {
+    "testSuitName": "#5",
+    "quantityOfPassedTests": 30,
+    "quantityOfFailedTests": 0,
+    "quantityOfSkippedTests": 0,
+    "barXCoordinate": 220,
+    "barYCoordinate": 145
+  }
+]
