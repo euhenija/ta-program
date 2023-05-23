@@ -1,8 +1,12 @@
-/* eslint-disable no-undef */
+/* eslint-disable import/no-duplicates, no-undef */
+
 import { expect } from 'chai'
+import chai from 'chai'
 import UserDataHandler from './user_data_handler'
 import mockUsers from '../../data/users.json'
 import nock from 'nock'
+import chaiAsPromised from 'chai-as-promised'
+chai.use(chaiAsPromised)
 
 describe('UserDataHandler:', () => {
   const userDataHandler = new UserDataHandler()
@@ -24,13 +28,7 @@ describe('UserDataHandler:', () => {
     nock('http://localhost:3000')
       .get('/users')
       .reply(504)
-    let errMessage
-    try {
-      await userDataHandler.loadUsers()
-    } catch (e) {
-      errMessage = e.message
-    }
-    expect(errMessage).to.deep.equal('Failed to load users data: Error: Request failed with status code 504')
+    expect(Promise.resolve(userDataHandler.loadUsers())).to.be.rejectedWith('Failed to load users data: Error: Request failed with status code 504')
   })
 
   it('(2) getNumberOfUsers() should return correct quntity of users', async () => {
@@ -69,24 +67,12 @@ describe('UserDataHandler:', () => {
   it('(7) findUsers() should return error if user with email does not exist', async () => {
     await userDataHandler.loadUsers()
     const nonExistingEmail = 'some@email.com'
-    let erMessage
-    try {
-      userDataHandler.findUsers({ email: nonExistingEmail })
-    } catch (e) {
-      erMessage = e.message
-    }
-    expect(erMessage).to.deep.equal('No matching users found!')
+    expect(() => userDataHandler.findUsers({ email: nonExistingEmail })).to.throw('No matching users found!')
   })
 
   it('(8) findUsers() should return error if no search parameters were provided', async () => {
     await userDataHandler.loadUsers()
-    let erMessage
-    try {
-      userDataHandler.findUsers()
-    } catch (e) {
-      erMessage = e.message
-    }
-    expect(erMessage).to.deep.equal('No search parameters provoded!')
+    expect(() => userDataHandler.findUsers()).to.throw('No search parameters provoded!')
   })
 
   it('(9) findUsers() should return error if uses were not loaded', async () => {
@@ -94,23 +80,15 @@ describe('UserDataHandler:', () => {
       .get('/users')
       .reply(200, [])
     await userDataHandler.loadUsers()
-    let erMessage
-    try {
-      userDataHandler.findUsers({ email: mockUsers[0].email })
-    } catch (e) {
-      erMessage = e.message
-    }
-    expect(erMessage).to.deep.equal('No users loaded!')
+    expect(() => userDataHandler.findUsers({ email: mockUsers[0].email })).to.throw('No users loaded!')
   })
 
   it('(10) getUserEmailsList() should return a string with users emails separated with semicolon', async () => {
     await userDataHandler.loadUsers()
-    const formActualEmailsList = async () => {
-      return new Promise((resolve) => {
-        const actualEmailsList = []
-        mockUsers.forEach((user) => actualEmailsList.push(user.email))
-        resolve(actualEmailsList)
-      })
+    const formActualEmailsList = () => {
+      const actualEmailsList = []
+      mockUsers.forEach((user) => actualEmailsList.push(user.email))
+      return actualEmailsList
     }
     const actualEmailsListString = (await formActualEmailsList()).join(';')
     expect(userDataHandler.getUserEmailsList()).to.deep.equal(actualEmailsListString)
@@ -121,12 +99,6 @@ describe('UserDataHandler:', () => {
       .get('/users')
       .reply(200, [])
     await userDataHandler.loadUsers()
-    let erMessage
-    try {
-      userDataHandler.getUserEmailsList()
-    } catch (e) {
-      erMessage = e.message
-    }
-    expect(erMessage).to.deep.equal('No users loaded!')
+    expect(() => userDataHandler.getUserEmailsList()).to.throw('No users loaded!')
   })
 })
