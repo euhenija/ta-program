@@ -1,0 +1,32 @@
+{
+  "name": "module-5",
+  "version": "1.0.0",
+  "description": "test automation framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/yauheniya_latysh/mentoring-program-advanced"
+  },
+  "keywords": [
+    "test",
+    "automation",
+    "framework"
+  ],
+  "author": "Yauheniya Latysh",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^8.10.0",
+    "@wdio/cli": "^8.10.0",
+    "@wdio/cucumber-framework": "^8.10.0",
+    "@wdio/local-runner": "^8.10.0",
+    "@wdio/spec-reporter": "^8.10.0",
+    "allure-commandline": "^2.22.0",
+    "chai": "^4.3.7",
+    "chromedriver": "^112.0.1",
+    "wdio-chromedriver-service": "^8.1.1"
+  }
+}
