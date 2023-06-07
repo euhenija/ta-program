@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true
+  },
+  "extends": ["plugin:prettier/recommended"],
+  "plugins": [ "prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "prettier/prettier": [
+        "error",
+        {
+        "endOfLine": "auto",
+        "printWidth": 120,
+        "singleQuote": true
+        }
+      ],
+    "no-unused-vars": "error"
+  }
+}
